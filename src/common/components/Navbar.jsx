@@ -1,18 +1,15 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import { Container, Typography, Box, AppBar } from '@mui/material';
 
 function NavBar() {
 	return (
-		<Box sx={{ flexGrow: 1 }}>
+		<Box mb={2}>
 			<AppBar position="static">
-				<Toolbar>
-					<Typography variant="h5" component="div" sx={{ flexGrow: 1, px: 1.5, py: 3 }}>
+				<Container maxWidth="lg">
+					<Typography variant="h5" component="div" py={2}>
 						Product Tracker App
 					</Typography>
-				</Toolbar>
+				</Container>
 			</AppBar>
 		</Box>
 	);
