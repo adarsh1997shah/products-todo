@@ -26,3 +26,7 @@ code {
 .rdg .rdg-cell.actions {
 	text-align: center;
 }
+
+.rdg .rdg-row.rdg-summary-row .rdg-cell {
+	border-block-start: none;
+}

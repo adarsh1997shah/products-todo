@@ -49,6 +49,18 @@ function ProductList() {
 		});
 	}, [filterData, sortColumns]);
 
+	const summaryRows = useMemo(() => {
+		return [
+			{
+				totalCount: filterData.length,
+				totalPrice: filterData.reduce(
+					(acc, { finalPrice }) => acc + Number(finalPrice),
+					0
+				),
+			},
+		];
+	}, [filterData]);
+
 	return (
 		<Box>
 			<Box display={{ xs: 'block', md: 'flex' }} mb={2} justifyContent="space-between">
@@ -78,6 +90,7 @@ function ProductList() {
 					onSelectedRowsChange={setSelectedRows}
 					sortColumns={sortColumns}
 					onSortColumnsChange={setSortColumns}
+					bottomSummaryRows={summaryRows}
 					defaultColumnOptions={{ sortable: true }}
 				/>
 			) : (
@@ -94,7 +107,14 @@ export default ProductList;
 function getColumns({ dispatch, confirm }) {
 	return [
 		SelectColumn,
-		{ key: 'name', name: 'Name', frozen: true },
+		{
+			key: 'name',
+			name: 'Name',
+			frozen: true,
+			renderSummaryCell() {
+				return <strong>Total</strong>;
+			},
+		},
 		{
 			key: 'category',
 			name: 'Category',
@@ -136,6 +156,9 @@ function getColumns({ dispatch, confirm }) {
 			name: 'Final Price',
 			renderCell({ row }) {
 				return formatPrice(row.finalPrice);
+			},
+			renderSummaryCell({ row }) {
+				return <strong>{formatPrice(row.totalPrice)}</strong>;
 			},
 		},
 		{
