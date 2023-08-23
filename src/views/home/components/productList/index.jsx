@@ -70,7 +70,7 @@ function ProductList() {
 
 				<Button
 					variant="contained"
-					disabled={!sortedRows.length}
+					disabled={selectedRows.size === 0}
 					onClick={handleBulkDelete}>
 					Bulk Delete Products
 				</Button>

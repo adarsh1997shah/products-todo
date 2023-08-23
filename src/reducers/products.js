@@ -36,7 +36,7 @@ const productsSlice = createSlice({
 
 			state.filterData = state.data.filter(({ name, category }) => {
 				return (
-					(payload.name ? name === payload.name : true) &&
+					(payload.name ? (name.indexOf(payload.name) > -1 ? true : false) : true) &&
 					(payload.category ? category.value === payload.category : true)
 				);
 			});

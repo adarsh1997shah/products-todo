@@ -89,7 +89,7 @@ function AddEditProductsForm({ editProduct: initialProduct }) {
 	const handleNumber = (e) => {
 		const { name, value } = e.target;
 
-		if (!isNaN(value) && Number(value)) {
+		if (!isNaN(value) || value === '') {
 			if (name === 'discount') {
 				if (Number(value) >= 0 && Number(value) <= 100) {
 					handleFormChange(e);
