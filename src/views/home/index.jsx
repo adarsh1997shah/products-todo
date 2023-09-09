@@ -18,7 +18,7 @@ function Home() {
 		<Container maxWidth="lg">
 			<Box mb={2}>
 				<Typography variant="h5" gutterBottom>
-					Track your Products!
+					Track your products
 				</Typography>
 			</Box>
 

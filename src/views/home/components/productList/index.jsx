@@ -26,7 +26,7 @@ function ProductList() {
 	const { filterData } = useSelector(({ products }) => products);
 
 	const handleBulkDelete = () => {
-		confirm({ description: 'Do You want to delete the selected products ?' })
+		confirm({ description: 'Do you want to delete the selected products ?' })
 			.then(() => dispatch(deleteProduct(selectedRows)))
 			.catch(() => {
 				/* ... */
@@ -64,8 +64,8 @@ function ProductList() {
 	return (
 		<Box>
 			<Box display={{ xs: 'block', md: 'flex' }} mb={2} justifyContent="space-between">
-				<Typography variant="h4" mb={{ xs: 2, md: 0 }}>
-					Product Lists
+				<Typography variant="h5" mb={{ xs: 2, md: 0 }}>
+					Product lists
 				</Typography>
 
 				<Button

@@ -51,7 +51,7 @@ function Filters() {
 
 	return (
 		<Box mt={2}>
-			<Typography variant="h5">Filters</Typography>
+			<Typography variant="h6">Filters</Typography>
 
 			<Box display="flex" gap={2} alignItems="baseline" flexWrap="wrap">
 				<TextField
